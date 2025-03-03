@@ -5,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organ Tracker</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <style>
-        #map {
-            height: 500px;
-            width: 100%;
-        }
-        #form {
-            margin: 20px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Organ Tracker</h1>
-    <div id="form">
-        <input type="text" id="organ" placeholder="Organ Name">
-        <input type="text" id="location" placeholder="Location (lat,lng)">
-        <button onclick="addOrgan()">Add Organ</button>
+    <div id="loginPage">
+        <h1>Organ Tracker</h1>
+        <input type="text" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
     </div>
-    <div id="map"></div>
-    <script src="script.js"></script>
+
+    <div id="signupPage" style="display:none;">
+        <h1>Organ Tracker</h1>
+        <input type="text" id="signupEmail" placeholder="Email">
+        <input type="password" id="signupPassword" placeholder="Password">
+        <button onclick="signUp()">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+
+    <div id="appPage" style="display:none;">
+        <h1>Organ Tracker</h1>
+        <div id="form">
+            <input type="text" id="organ" placeholder="Organ Name">
+            <input type="text" id="location" placeholder="Location (lat,lng)">
+            <button onclick="addOrgan()">Add Organ</button>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
-
