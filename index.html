@@ -8,26 +8,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Login Page -->
     <div id="loginPage" class="container">
         <h1>Organ Tracker</h1>
         <div class="form-group">
             <input type="text" id="loginEmail" placeholder="Email">
             <input type="password" id="loginPassword" placeholder="Password">
             <button onclick="login()">Login</button>
-            <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
         </div>
     </div>
 
-    <div id="signupPage" class="container" style="display:none;">
-        <h1>Organ Tracker</h1>
-        <div class="form-group">
-            <input type="text" id="signupEmail" placeholder="Email">
-            <input type="password" id="signupPassword" placeholder="Password">
-            <button onclick="signUp()">Sign Up</button>
-            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
-        </div>
-    </div>
-
+    <!-- App Page -->
     <div id="appPage" style="display:none;">
         <header>
             <h1>Organ Tracker</h1>
