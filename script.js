@@ -8,16 +8,6 @@ function initMap() {
     });
 }
 
-function showSignUp() {
-    document.getElementById('loginPage').style.display = 'none';
-    document.getElementById('signupPage').style.display = 'block';
-}
-
-function showLogin() {
-    document.getElementById('loginPage').style.display = 'block';
-    document.getElementById('signupPage').style.display = 'none';
-}
-
 function login() {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
@@ -38,7 +28,7 @@ function signUp() {
     if (validateEmail(email) && password) {
         localStorage.setItem(email, password);
         alert('Account created successfully');
-        showLogin();
+        window.location.href = 'index.html';
     } else {
         alert('Please enter a valid email and password');
     }
