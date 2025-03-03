@@ -3,9 +3,45 @@ let organs = [];
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 37.7749, lng: -122.4194 }, // Initial position
+        center: { lat: 37.7749, lng: -122.4194 },
         zoom: 10
     });
+}
+
+function showSignUp() {
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('signupPage').style.display = 'block';
+}
+
+function showLogin() {
+    document.getElementById('loginPage').style.display = 'block';
+    document.getElementById('signupPage').style.display = 'none';
+}
+
+function login() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const storedPassword = localStorage.getItem(email);
+
+    if (storedPassword && storedPassword === password) {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('appPage').style.display = 'block';
+    } else {
+        alert('Invalid login credentials');
+    }
+}
+
+function signUp() {
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+
+    if (email && password) {
+        localStorage.setItem(email, password);
+        alert('Account created successfully');
+        showLogin();
+    } else {
+        alert('Please enter both email and password');
+    }
 }
 
 function addOrgan() {
@@ -36,4 +72,3 @@ function addMarker(organ) {
         infoWindow.open(map, marker);
     });
 }
-
