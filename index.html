@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Deca Chatbot</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organ Tracker</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        #form {
+            margin: 20px 0;
+        }
+    </style>
 </head>
-
 <body>
-  <iframe src="https://thelearningexperience.com/centers/mill-creek/" title="Learning Experience Mill Creek"></iframe>
-  <script src="script.js"></script>
+    <h1>Organ Tracker</h1>
+    <div id="form">
+        <input type="text" id="organ" placeholder="Organ Name">
+        <input type="text" id="location" placeholder="Location (lat,lng)">
+        <button onclick="addOrgan()">Add Organ</button>
+    </div>
+    <div id="map"></div>
+    <script src="app.js"></script>
 </body>
-  
-  <script> window.chtlConfig = { chatbotId: "6976227232" } </script>
-  <script async data-id="6976227232" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
-  
 </html>
+
