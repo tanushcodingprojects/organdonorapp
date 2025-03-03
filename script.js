@@ -35,13 +35,23 @@ function signUp() {
     const email = document.getElementById('signupEmail').value;
     const password = document.getElementById('signupPassword').value;
 
-    if (email && password) {
+    if (validateEmail(email) && password) {
         localStorage.setItem(email, password);
         alert('Account created successfully');
         showLogin();
     } else {
-        alert('Please enter both email and password');
+        alert('Please enter a valid email and password');
     }
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function logout() {
+    document.getElementById('appPage').style.display = 'none';
+    document.getElementById('loginPage').style.display = 'block';
 }
 
 function addOrgan() {
