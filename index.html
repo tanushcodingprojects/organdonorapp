@@ -3,36 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organ Tracker</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <title>LifeLink App</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </head>
 <body>
-    <!-- Login Page -->
-    <div id="loginPage" class="container">
-        <h1>Organ Tracker</h1>
-        <div class="form-group">
-            <input type="text" id="loginEmail" placeholder="Email">
-            <input type="password" id="loginPassword" placeholder="Password">
-            <button onclick="login()">Login</button>
-            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
-        </div>
-    </div>
-
-    <!-- App Page -->
-    <div id="appPage" style="display:none;">
-        <header>
-            <h1>Organ Tracker</h1>
-            <button onclick="logout()">Logout</button>
-        </header>
-        <div id="form" class="form-group">
-            <input type="text" id="organ" placeholder="Organ Name">
-            <input type="text" id="location" placeholder="Location (lat,lng)">
-            <button onclick="addOrgan()">Add Organ</button>
+    <h1>LifeLink App</h1>
+    <div id="app">
+        <h2>Track Organs and Blood Donations</h2>
+        <form id="location-form">
+            <label for="location-name">Location Name:</label>
+            <input type="text" id="location-name" name="location-name" required>
+            <label for="location-address">Location Address:</label>
+            <input type="text" id="location-address" name="location-address" required>
+            <button type="submit">Add Location</button>
+        </form>
+        <button id="find-closest">Find Closest Location</button>
+        <div id="tracking-result">
+            <!-- Tracking information will be displayed here -->
         </div>
         <div id="map"></div>
     </div>
-
-    <script src="app.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
